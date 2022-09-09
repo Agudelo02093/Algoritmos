@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    font-size: 18px;
+}
+
+.content{
+    width: 30%;
+    height: 80%;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 5%;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding: 5px 15px 0px 15px;
+}
+
+.head img{
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.head .user{
+    display: flex;
+}
+
+.head .username{
+    padding: 8px;
+}
+
+.head .username h3{
+    font-size: 1em;
+}
+
+.head .username p{
+    font-size: 0.8em;
+}
+
+.head .more{
+    width: 25px;
+    height: 25px;
+    margin: 20px 10px 10px 10px;
+}
+
+.post-content img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0 5px 0;
+    width: 93%;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 3%;
+    margin-right: 3%;
+
+}
+
+.icons img{
+    margin: 2px;
+    width: 25px;
+    height: 25px;   
+}
+
+.description{
+    padding: 10px 20px 10px 20px;
+    
+}
+
+.description{
+    font-size:0.8rem;
+
+}
+
+.views {
+    font-size:0.7rem;
+    font-weight: bold;
+
+}
+
+.comments, .day{
+    font-size:0.7rem;
+    color: gray;
+
+}
