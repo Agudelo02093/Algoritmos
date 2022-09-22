@@ -1,53 +1,39 @@
-export enum AttributeNav {
-    "imgprofile" = "imgprofile"
-}
-
-class Nav extends HTMLElement {
-    imgprofile?: any;
-
-    static get observedAttributes(){
-        const atrib: Record<AttributeNav,null> = {
-            imgprofile: null,
-        };
-        return Object.keys(atrib);
-    }
-
-    constructor() {
+class Nav extends HTMLElement{
+    constructor(){
         super();
-        this.attachShadow({mode:'open'});
+        this.attachShadow({mode: "open"});
     }
 
-    attributeChangedCallback(propName: any, oldValue: string, newValue: string) {
-        if(this[propName] === newValue) return;
-        this[propName] = newValue;
-        this.mount();
-    }
-
-    mount(): void {
+    connectedCallback(){
         this.render();
     }
 
-    render(): void {
-        this.shadowRoot.innerHTML = `
-        <section>
-            <section>
-            <img src="./images/photo1.jpg" alt="logo app">
+    render(){
+        if(this.shadowRoot){
+            this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="./app/components/Nav/Nav.css">
+
+            <section class="container">
+                <section class="logo">
+                    <img src="./app/images/Instagram_logo.svg.png" alt="logo app">
+                </section>
+                <section>
+                    <input type="text" placeholder="Buscar"> !!!Arreglarlo
+                </section>
+                <section class="icons">
+                    <img src="./app/images/icons8-casa.svg" alt="home">
+                    <img src="./app/images/icons8-facebook-messenger.svg" alt="message">
+                    <img src="./app/images/more.svg" alt="add">
+                    <img src="./app/images/compass-outline.svg" alt="explore">
+                    <img src="./app/images/heart-outline.svg" alt="favorites">
+                    <img src="./app/images/photo1.jpg" class="profile-nav" alt="profile">
+                </section>
             </section>
-            <section>
-            <input type="text" placeholder="Buscar"> !!!Arreglarlo
-            </section>
-            <section>
-            <img src="./images/icons8-casa.svg" alt="home">
-            <img src="./images/icons8-facebook-messenger.svg" alt="message">
-            <img src="./images/more.svg" alt="add">
-            <img src="./images/compass-outline.svg" alt="explore">
-            <img src="./images/heart-outline.svg" alt="favorites">
-            <img src="./images/photo1.jpg" alt="profile">
-            </section>
-        </section>
-        `
+            `
+        }
     }
+
 }
 
-customElements.define('my-nav', Nav);
+customElements.define("my-nav", Nav);
 export default Nav;

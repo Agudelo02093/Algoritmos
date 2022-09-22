@@ -32,7 +32,7 @@ class Post extends HTMLElement {
         this.attachShadow({mode:'open'});
     }
 
-    attributeChangedCallback(propName: any, oldValue: string, newValue: string) {
+    attributeChangedCallback(propName: AttributePost, oldValue: string, newValue: string) {
         if(this[propName] === newValue) return;
         this[propName] = newValue;
         this.mount();
@@ -43,8 +43,41 @@ class Post extends HTMLElement {
     }
 
     render(): void {
+        if (!this.shadowRoot) return;
         this.shadowRoot.innerHTML = `
-        
+        <link rel="stylesheet" href="./app/components/Post/Post.css">
+        <section class="content">
+            <section class="head">
+                <section class="user">
+                    <img src="${this.imgprofile}" alt="Imagen perfil">
+                    <section class="username">
+                        <h3 class="">${this.name}</h3>
+                        <p>${this.gps}</p>
+                    </section>
+                </section>
+                <img src="./app/images/ellipsis-horizontal.svg" alt="more" class="more">
+            </section>
+
+            <section class="post-content">
+                <img src="${this.content}" alt="Image post">
+            </section>
+
+            <section class="icons">
+                <section class="icons-first">
+                    <img src="./app/images/heart-outline.svg" alt="">
+                    <img src="./app/images/chatbubble-outline.svg" alt="">
+                    <img src="./app/images/paper-plane-outline.svg" alt="">
+                </section>
+                <img src="./app/images/bookmark-outline.svg" alt="">
+            </section>
+
+            <section class="description">
+                <p class="views">${this.views} Me gusta</p>
+                <p><strong>${this.name}</strong> ${this.description}</p>
+                <p class="comments">View all 150 comments</p>
+                <p class="day">3 DAYS AGO</p>
+            </section>
+        </section>
         `
     }
 }

@@ -20,7 +20,7 @@ class Storie extends HTMLElement {
         this.attachShadow({mode: 'open'});
     }
 
-    attributeChangedCallback(propName: any, oldValue: string, newValue: string) {
+    attributeChangedCallback(propName: AttributeStorie, oldValue: string, newValue: string) {
         if(this[propName]=== newValue) return;
         this[propName] = newValue;
         this.mount();
@@ -31,11 +31,16 @@ class Storie extends HTMLElement {
     }
 
     render(): void {
+        if (!this.shadowRoot) return;
         this.shadowRoot.innerHTML = `
-        <link rel="stylesheet" href="./components/Stories/storie.css">
-        <section>
-            <img src="${this.imgprofile}" alt="img storie">
-            <p>${this.name}</p>
+        <link rel="stylesheet" href="./app/components/Stories/Stories.css">
+        <section class="container">
+            <section>
+                <section class="gradiant">
+                <img src="${this.imgprofile}" alt="img storie">
+                </section>
+                <p>${this.name}</p>
+            </section>
         </section>
         `
     }
