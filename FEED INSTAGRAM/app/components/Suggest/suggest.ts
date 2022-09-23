@@ -14,41 +14,53 @@ class Suggest extends HTMLElement{
             <link rel="stylesheet" href="./app/components/Suggest/Suggest.css">
             <section class="container">
                 <section class="profile">
-                    <section>
+                    <section class="user">
                         <img src="./app/images/photo1.jpg" alt="profile">
-                        <section>
+                        <section class="username">
                             <h2>agudelo9914</h2>
                             <p>Ana Agudelo</p>
                         </section>
                     </section>
-                    <p>Cambiar</p>
+                    <p class="blue">Cambiar</p>
                 </section>
 
-                <section>
-                    <h2>Sugerencias para ti</h2>
+                <section class="middle-line">
+                    <h3>Sugerencias para ti</h3>
                     <p>Ver más</p>
                 </section>
 
                 <section class="user-profile">
-                    <section>
-                        <img src="./app/images/photo2.jpg" alt="profile">
-                        <h2>@tristejoker</h2>
-                        <p>Meritxell Segura</p>
-                        <p>Nuevo en Instagram</p>
+                    <section class="content">
+                        <section class="suggest-user">
+                            <img src="./app/images/photo2.jpg" alt="profile">
+                            <section class="suggest-username">
+                                <h2>@tristejoker</h2>
+                                <p>Nuevo en Instagram</p>
+                            </section>
+                            <p class="blue">Seguir</p>
+                        </section>
                     </section>
 
-                    <section>
-                        <img src="./app/images/photo3.jpg" alt="profile">
-                        <h2>@elexterminadorfeliz</h2>
-                        <p>Fabian Pastor</p>
-                        <p>Sugerido para ti</p>
+                    <section class="content">
+                        <section class="suggest-user">
+                            <img src="./app/images/photo3.jpg" alt="profile">
+                            <section class="suggest-username">
+                                <h2>@elexterminadorfeliz</h2>
+                                <p>Sugerido para ti</p>
+                            </section>
+                            <p class="blue">Seguir</p>
+                        </section>        
                     </section>
 
-                    <section>
-                        <img src="./app/images/photo4.jpg" alt="profile">
-                        <h2>@elbuenoelfeoyyo</h2>
-                        <p>Cecilio Lamas</p>
-                        <p>laescenaguacari y 22 más siguen esta cuent...</p>
+                    <section class="content">
+                        <section class="suggest-user">
+                            <img src="./app/images/photo4.jpg" alt="profile">
+                            <section class="suggest-username">
+                                <h2>@elbuenoelfeoyyo</h2>
+                                <p>laescenaguacari y 22 más siguen esta cuent...</p>
+                            </section>
+                            <p class="blue">Seguir</p>
+                        </section>
                     </section>
                 </section>
             </section>

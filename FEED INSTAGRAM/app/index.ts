@@ -38,7 +38,7 @@ class AppContainer extends HTMLElement{
 
     render(){
         if(this.shadowRoot){
-            this.shadowRoot.innerHTML = `<link rel="stylesheet" href="./app/index.css">`;
+            this.shadowRoot.innerHTML = `<link rel="stylesheet" href="./app/components/Stories/Stories.css">`;
             const storiesContainer = this.ownerDocument.createElement("div");
             storiesContainer.classList.add('stories-container');
             this.stories.forEach((storie)=>{

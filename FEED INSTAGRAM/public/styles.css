@@ -8,3 +8,8 @@
     display: flex;
     flex-direction: row;
 }
+
+.suggest {
+    justify-content: flex-start;
+    margin-right: 250px;
+}
