@@ -8,10 +8,13 @@ import Post, {AttributePost} from "./components/Post/Post.js";
 class AppContainer extends HTMLElement{
     stories: Storie[] = [];
     posts: Post[] = [];
+    storiesContainer:any;
 
     constructor(){
         super();
         this.attachShadow({mode: 'open'});
+        this.storiesContainer = this.ownerDocument.createElement("div");
+        this.storiesContainer.classList.add('stories-container');
 
         data.forEach((data)=>{
             const cardStories = this.ownerDocument.createElement("my-storie") as Storie;
@@ -39,11 +42,11 @@ class AppContainer extends HTMLElement{
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `<link rel="stylesheet" href="./app/components/Stories/Stories.css">`;
-            const storiesContainer = this.ownerDocument.createElement("div");
-            storiesContainer.classList.add('stories-container');
             this.stories.forEach((storie)=>{
-                this.shadowRoot?.appendChild(storie);
+                this.storiesContainer.appendChild(storie);
             })
+            this.shadowRoot?.appendChild(this.storiesContainer);
+
             this.posts.forEach((post)=>{
                 this.shadowRoot?.appendChild(post);
             })

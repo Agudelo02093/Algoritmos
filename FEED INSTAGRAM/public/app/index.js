@@ -8,6 +8,8 @@ class AppContainer extends HTMLElement {
         this.stories = [];
         this.posts = [];
         this.attachShadow({ mode: 'open' });
+        this.storiesContainer = this.ownerDocument.createElement("div");
+        this.storiesContainer.classList.add('stories-container');
         data.forEach((data) => {
             const cardStories = this.ownerDocument.createElement("my-storie");
             cardStories.setAttribute(AttributeStorie.imgprofile, data.imgprofile);
@@ -29,15 +31,13 @@ class AppContainer extends HTMLElement {
         this.render();
     }
     render() {
+        var _a;
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `<link rel="stylesheet" href="./app/components/Stories/Stories.css">`;
-            const storiesContainer = this.ownerDocument.createElement("div");
-            storiesContainer.classList.add('stories-container');
             this.stories.forEach((storie) => {
-                var _a;
-                (_a = storiesContainer) === null || _a === void 0 ? void 0 : _a.appendChild(storie);
+                this.storiesContainer.appendChild(storie);
             });
-            (this.shadowRoot) === null || this.shadowRoot === void 0 ? void 0 : this.shadowRoot.appendChild(storiesContainer);
+            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(this.storiesContainer);
             this.posts.forEach((post) => {
                 var _a;
                 (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(post);
