@@ -8,11 +8,11 @@
  * el arreglo ["b", 6, "a", "q", 7, 2] retornará ["a", "b", "q", 2, 6, 7]
  */
 
-const revueltos: any[] = ["b", 6, "a", "q", 7, 2]
+const revueltos: any[] = ["b", 6, "a", 7, 2, "q"]
  
  const letra1: any[] = revueltos.slice(0, 1);
  const letra2: any[] = revueltos.slice(2, 3);
- const letra3: any[] = revueltos.slice(4, 5); 
+ const letra3: any[] = revueltos.slice(5, 6); 
  
  const concatenar: any[] = letra1.concat(letra2, letra3);
  

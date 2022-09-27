@@ -8,10 +8,10 @@
  * ejem:
  * el arreglo ["b", 6, "a", "q", 7, 2] retornará ["a", "b", "q", 2, 6, 7]
  */
-const revueltos = ["b", 6, "a", "q", 7, 2];
+const revueltos = ["b", 6, "a", 7, 2, "q"];
 const letra1 = revueltos.slice(0, 1);
 const letra2 = revueltos.slice(2, 3);
-const letra3 = revueltos.slice(4, 5);
+const letra3 = revueltos.slice(5, 6);
 const concatenar = letra1.concat(letra2, letra3);
 const ordenadoUno = concatenar.sort();
 const Numero = revueltos.filter(Number);
