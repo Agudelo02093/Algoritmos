@@ -1,0 +1,19 @@
+* {
+    background-image: url("./images/fondo.jpg");
+}
+
+.logo img{
+    display: block;  
+    margin: auto; 
+    margin-top: 50px;
+    width: 300px;
+    height: auto;
+}
+
+app-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2% 5%;
+    justify-content: center;
+}

@@ -32,10 +32,13 @@ class Post extends HTMLElement {
         this.attachShadow({mode:'open'});
     }
 
-    attributeChangedCallback(propName: AttributePost, oldValue: string, newValue: string) {
-        if(this[propName] === newValue) return;
-        this[propName] = newValue;
-        this.mount();
+    attributeChangedCallback(
+        propName: AttributePost,
+        oldValue: string | undefined,
+        newValue: string | undefined) {
+            if(this[propName] === newValue) return;
+            this[propName] = newValue;
+            this.mount();
     }
 
     mount(): void {
